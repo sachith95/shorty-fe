@@ -1,6 +1,6 @@
-# React URL shortener
+# Shorty
 
-This project is a simple URL shortener that uses React for the frontend.
+This project is a demo URL shortener that uses React for the frontend.
 
 ### Features
 
