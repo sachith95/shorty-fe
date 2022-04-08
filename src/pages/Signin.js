@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const Signin = (props) => {
   const { register, handleSubmit, errors } = useForm();
-
+  console.log(errors);
   const onSubmit = async (data) => {
     try {
       const { email, password } = data;
@@ -15,8 +15,8 @@ const Signin = (props) => {
         "http://127.0.0.1:8000/oauth/token",
         {
           username: email,
-          client_id: "2",
-          client_secret: "XoTTjwYNwNLn5pCBC7PH2jffQFDgT0cqduGtq7G0",
+          client_id: process.env.REACT_APP_CLIENT_ID,
+          client_secret: process.env.REACT_APP_CLIENT_SECRET,
           password: password,
           grant_type: "password",
         },
@@ -53,7 +53,7 @@ const Signin = (props) => {
           <div className="userForm__container__title">Sign in</div>
           <div className="userForm__container__field d-flex flex-column">
             <label htmlFor="" className="input__label">
-              Email
+              Email Hi {process.env.REACT_APP_NAME}
             </label>
             <input
               type="text"
